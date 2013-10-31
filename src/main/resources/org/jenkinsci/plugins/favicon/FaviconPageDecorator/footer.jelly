@@ -1,0 +1,14 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <script type="text/javascript">(function () {
+    var icons = Array.prototype.forEach.call(document.getElementsByTagName("link"), function(link) {
+      if (link.rel === 'shortcut icon' || link.rel === 'icon') {
+        link.parentNode.removeChild(link);
+      }
+    }); 
+    var newLink = document.createElement('link');;
+    newLink.setAttribute('rel', 'icon');
+    document.getElementsByTagName('head')[0].appendChild(newLink);
+    newLink.href = 'https://wiki.jenkins-ci.org/s/2037/5/_/images/logo/confluence_16.png';
+ })();
+  </script>
+</j:jelly>
