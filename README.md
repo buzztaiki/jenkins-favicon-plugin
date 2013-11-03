@@ -7,13 +7,13 @@ This plugin allows you to set a favicon to your jenkins.
 Installation
 ------------
 
-- Prepare plugin development environment (see. [Plugin tutorial](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial)).
+1. Prepare plugin development environment (see. [Plugin tutorial](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial)).
 
-- Build hpi using maven.
+2. Build hpi using maven.
 
         $ mvn package
 
-- Install hpi into your jenkins.
+3. Install hpi into your jenkins.
 
 
 Usage
