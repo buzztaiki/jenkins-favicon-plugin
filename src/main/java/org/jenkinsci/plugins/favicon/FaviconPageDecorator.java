@@ -29,10 +29,7 @@ public final class FaviconPageDecorator extends PageDecorator {
         return faviconPath;
     }
 
-    public String getJsFaviconPath() {
-        if (faviconPath == null) {
-            return null;
-        }
-        return faviconPath.replaceAll("['\"]", "\\\\$0");
+    public boolean isUseFavicon() {
+        return faviconPath != null;
     }
 }
