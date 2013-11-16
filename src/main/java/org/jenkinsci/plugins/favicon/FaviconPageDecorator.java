@@ -11,6 +11,7 @@ public final class FaviconPageDecorator extends PageDecorator {
 
     public FaviconPageDecorator() {
         super();
+        load();
     }
 
     @Override
