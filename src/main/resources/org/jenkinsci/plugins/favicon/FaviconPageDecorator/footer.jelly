@@ -1,22 +1,16 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
   <j:if test="${it.useFavicon}">
-    <div id="data-FaviconPageDecorator"
+    <div id="org.jenkinsci.plugins.favicon.data"
          data-favicon-path="${it.faviconPath}"
          data-root-url="${rootURL}"
          ></div>
-    <script type="text/javascript">(function () {
-      Array.prototype.forEach.call(document.getElementsByTagName('link'), function(link) {
-        if (link.rel === 'shortcut icon' || link.rel === 'icon') {
-          link.parentNode.removeChild(link);
-        }
-      });
-      var newLink = document.createElement('link');
-      newLink.setAttribute('rel', 'icon');
-      document.getElementsByTagName('head')[0].appendChild(newLink);
-
-      var data = document.getElementById('data-FaviconPageDecorator');
-      newLink.href = data.getAttribute('data-root-url') + data.getAttribute('data-favicon-path');
-   })();</script>
+    <script src="${rootURL}/plugin/favicon/favicon.js"></script>
+    <script>
+      (function() {
+        var favicon = this['org.jenkinsci.plugins.favicon'];
+        favicon.replace(document.getElementById('org.jenkinsci.plugins.favicon.data'));
+      })();
+    </script>
   </j:if>
 </j:jelly>
